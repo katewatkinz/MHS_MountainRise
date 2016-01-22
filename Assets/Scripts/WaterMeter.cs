@@ -1,23 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
+namespace MountainRise
+{
 
-public class WaterMeter : MonoBehaviour {
-
-    // Use this for initialization
-    public float objScale = 1;
-
-
-    void OnGUI()
+    public class WaterMeter : MonoBehaviour
     {
-        objScale = GUI.VerticalSlider(new Rect(100, 100, 100, 90), objScale, 100f, 1);
 
-        if (GUI.changed)
+        // Use this for initialization
+        public float objScale = 1;
+
+
+        void OnGUI()
         {
-            transform.localScale = new Vector3(4, objScale, 1);
+            objScale = GUI.VerticalSlider(new Rect(100, 100, 100, 90), objScale, 100f, 1);
+
+            if (GUI.changed)
+            {
+                transform.localScale = new Vector3(4, objScale, 1);
+            }
+        }
+        // Update is called once per frame
+        void Update()
+        {
+
         }
     }
-    // Update is called once per frame
-    void Update () {
-	
-	}
 }
